@@ -71,7 +71,7 @@ function botReplyFor(text){
   if(t.includes('login')||t.includes('sign')) return 'To login, click the Login button on the header or open the full login page.';
   if(t.includes('nominate')||t.includes('nomination')) return 'Use the "Nominate Talent" button in the Bihar Talent Spotlight section to submit a nomination.';
   if(t.includes('program')||t.includes('train')) return 'We offer training camps, scouting, mentorship, and events. See the Programs section for details.';
-  if(t.includes('contact')||t.includes('reach')) return 'Use the Contact form near the bottom or email us at hello@sportslaunch.example (placeholder).';
+  if(t.includes('contact')||t.includes('reach')) return 'Use the Contact form near the bottom or email us at hello@kheltantra.example (placeholder).';
   const fallbacks = [
     'Great question — could you share a bit more?',
     'I can help with programs, nominations, and account setup. What would you like?',

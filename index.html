@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SportsLanding — Join the Movement</title>
+  <title>kheltantra — Join the Movement</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .gif-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.2rem 0;align-items:center}
+    .gif-card{background:rgba(255,255,255,0.02);padding:0.6rem;border-radius:8px;display:flex;align-items:center;justify-content:center}
+    .gif-card img{width:100%;height:auto;border-radius:6px;display:block}
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav-row">
-      <a class="logo" href="#">Sports<span class="accent">Launch</span></a>
+      <a class="logo" href="#">kheltantra</a>
       <nav class="main-nav" aria-label="Main Navigation">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -47,6 +52,16 @@
           <!-- Decorative sports SVG placeholder -->
           <img src="assets/hero-sport.svg" alt="Athlete silhouette"/>
         </div>
+      </div>
+    </section>
+
+    <section id="gifs" class="container">
+      <div class="section-header"><h2>Sports GIFs</h2><p>Fun highlights and motion — enjoy a few sports GIFs.</p></div>
+      <div class="gif-grid" aria-live="polite">
+        <div class="gif-card"><img src="https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" alt="Cricket batter hitting a shot"/></div>
+        <div class="gif-card"><img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Soccer player scoring a goal"/></div>
+        <div class="gif-card"><img src="https://media.giphy.com/media/1zSz5MVw6hK0A/giphy.gif" alt="Runner sprinting"/></div>
+        <div class="gif-card"><img src="https://media.giphy.com/media/3o6ZtpxSZbQRRnwCKQ/giphy.gif" alt="Basketball dunk"/></div>
       </div>
     </section>
 
@@ -140,7 +155,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="logo" href="#">Sports<span class="accent">Launch</span></a>
+          <a class="logo" href="#">kheltantra</a>
         <p>Energetic. Inclusive. Aspirational.</p>
       </div>
       <div>
@@ -159,7 +174,7 @@
         </form>
       </div>
     </div>
-    <div class="footer-bottom container">© <span id="year"></span> SportsLaunch — Terms • Privacy</div>
+    <div class="footer-bottom container">© <span id="year"></span> kheltantra — Terms • Privacy</div>
   </footer>
 
   <!-- Login Modal -->
@@ -192,7 +207,7 @@
     <div id="botPanel" class="bot-panel" role="dialog" aria-hidden="true" aria-labelledby="botTitle">
       <div class="bot-header">
         <div>
-          <strong id="botTitle">SportsLaunch Assistant</strong>
+          <strong id="botTitle">kheltantra Assistant</strong>
           <div class="bot-sub">Ask about programs, joining, or nominate talent</div>
         </div>
         <button id="botClose" class="bot-close" aria-label="Close">✕</button>
