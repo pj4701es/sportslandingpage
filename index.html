@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SportsLanding — Join the Movement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="logo" href="#">Sports<span class="accent">Launch</span></a>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#talent">Talent</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button id="loginBtn" class="btn btn-ghost">Login</button>
+        <a href="#join" class="btn btn-primary">Join the Movement</a>
+        <button id="themeToggle" class="btn btn-ghost" aria-pressed="false" aria-label="Toggle theme">🌙</button>
+        <button id="menuToggle" class="mobile-menu" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Powering Bihar’s Next-Gen Athletes ⚡</h1>
+          <p class="tagline">Training • Scouting • Mentorship — join a community built for dreamers and grinders.</p>
+          <div class="hero-ctas">
+            <a href="#join" class="btn btn-primary">Join the Movement</a>
+            <a href="#talent" class="btn btn-muted">Discover Talent</a>
+          </div>
+          <p class="micro">Short, snackable updates • Live trials • Community-first</p>
+        </div>
+        <div class="hero-art" aria-hidden>
+          <!-- Decorative sports SVG placeholder -->
+          <img src="assets/hero-sport.svg" alt="Athlete silhouette"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="talent" class="spotlight container">
+      <div class="section-header">
+        <h2>Bihar Talent Spotlight</h2>
+        <p>Emerging athletes from Bihar — nominate someone you believe in.</p>
+      </div>
+
+      <div class="filters" aria-label="Talent filters">
+        <select id="filterSport" aria-label="Filter by sport">
+          <option value="all">All Sports</option>
+        </select>
+        <select id="filterDistrict" aria-label="Filter by district">
+          <option value="all">All Districts</option>
+        </select>
+        <select id="filterGender" aria-label="Filter by gender">
+          <option value="all">All Genders</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <button id="clearFilters" class="btn btn-ghost">Clear</button>
+        <a href="#nominate" class="btn btn-primary">Nominate Talent</a>
+      </div>
+
+      <div id="talentList" class="cards-grid" aria-live="polite">
+        <!-- Talent cards rendered by JS -->
+      </div>
+    </section>
+
+    <section id="programs" class="container programs">
+      <div class="section-header"><h2>Programs</h2><p>Training, scouting, mentorship, and events designed to develop talent.</p></div>
+      <div class="program-grid">
+        <div class="program-card">
+          <h3>Training Camps</h3>
+          <p>Sport-specific training with certified coaches and performance tracking.</p>
+        </div>
+        <div class="program-card">
+          <h3>Scouting & Trials</h3>
+          <p>Local trials and scouting reports to connect athletes with clubs and academies.</p>
+        </div>
+        <div class="program-card">
+          <h3>Mentorship</h3>
+          <p>Career guidance, mental skills coaching, and scholarship support.</p>
+        </div>
+        <div class="program-card">
+          <h3>Events</h3>
+          <p>Workshops, tournaments, and community showcases across Bihar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="container news">
+      <div class="section-header"><h2>News & Updates</h2><p>Latest announcements and stories.</p></div>
+      <div class="news-grid">
+        <article class="news-card"><h4>State Trials Announced</h4><p>Register for district-level trials happening next month.</p></article>
+        <article class="news-card"><h4>Spotlight: Young Achiever</h4><p>Read about an inspiring story from Patna.</p></article>
+        <article class="news-card"><h4>New Coaching Partners</h4><p>We've partnered with local academies to expand access.</p></article>
+      </div>
+    </section>
+
+    <section id="partners" class="container partners">
+      <div class="section-header"><h2>Partners & Sponsors</h2></div>
+      <div class="partners-grid" aria-hidden>
+        <img src="assets/logo-placeholder.svg" alt="Partner logo 1"/>
+        <img src="assets/logo-placeholder.svg" alt="Partner logo 2"/>
+        <img src="assets/logo-placeholder.svg" alt="Partner logo 3"/>
+        <img src="assets/logo-placeholder.svg" alt="Partner logo 4"/>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <div class="section-header"><h2>Contact</h2><p>Reach out to join, partner, or nominate talent.</p></div>
+      <form id="contactForm" class="contact-form" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" required />
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <div class="form-row">
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div id="formMsg" class="form-msg" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="#">Sports<span class="accent">Launch</span></a>
+        <p>Energetic. Inclusive. Aspirational.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#talent">Talent</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#news">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <form id="newsletterForm">
+          <input id="nlEmail" type="email" placeholder="you@email.com" required />
+          <button class="btn btn-ghost">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom container">© <span id="year"></span> SportsLaunch — Terms • Privacy</div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="loginTitle">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <h3 id="loginTitle">Login</h3>
+      <form id="loginForm" novalidate>
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" required />
+        <label for="loginPass">Password</label>
+        <input id="loginPass" type="password" required minlength="6" />
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+          <a href="login.html" class="btn btn-ghost">Open full page</a>
+        </div>
+      </form>
+      <div class="oauth">
+        <button class="btn oauth">Continue with Google</button>
+        <button class="btn oauth">Continue with Apple</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
+  <!-- Help / Chat Bot Widget -->
+  <div id="helpBot" class="help-bot" aria-live="polite">
+    <button id="botToggle" class="bot-button" aria-label="Open help" aria-expanded="false">💬</button>
+    <div id="botPanel" class="bot-panel" role="dialog" aria-hidden="true" aria-labelledby="botTitle">
+      <div class="bot-header">
+        <div>
+          <strong id="botTitle">SportsLaunch Assistant</strong>
+          <div class="bot-sub">Ask about programs, joining, or nominate talent</div>
+        </div>
+        <button id="botClose" class="bot-close" aria-label="Close">✕</button>
+      </div>
+      <div id="botMessages" class="bot-messages" tabindex="0"></div>
+      <form id="botForm" class="bot-form" autocomplete="off">
+        <input id="botInput" placeholder="Type a question or 'help'..." aria-label="Chat input" />
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

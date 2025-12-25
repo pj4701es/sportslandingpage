@@ -1,0 +1,124 @@
+/* styles.css - Mobile-first responsive styles for SportsLanding
+   Comments included for structure and reusability.
+*/
+:root{
+  --bg:#0f1720; /* dark neutral */
+  --surface:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#00e5ff; /* electric blue */
+  --accent-2:#7CFF00; /* neon green alternative */
+  --white:#ffffff;
+  --radius:12px;
+  --glass: rgba(255,255,255,0.04);
+}
+/* Light theme: toggled via `body.light` class */
+body.light{
+  --bg: #f7fafc;
+  --surface: #ffffff;
+  --muted: #475569;
+  --accent: #0066ff;
+  --accent-2: #00cc66;
+  --white: #001018;
+  --glass: rgba(0,0,0,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg,#071021 0%, #071827 100%);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Light theme background override */
+body.light{
+  background: linear-gradient(180deg,#f8fafc 0%, #f1f5f9 100%);
+  color:var(--white);
+}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+.site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(11,18,32,0.8), rgba(11,18,32,0.6));backdrop-filter:blur(6px);z-index:50}
+.nav-row{display:flex;align-items:center;gap:1rem;justify-content:space-between}
+.logo{font-family:Poppins, Inter; font-weight:700; color:var(--white); text-decoration:none}
+.logo .accent{color:var(--accent)}
+.main-nav ul{display:flex;gap:1rem;list-style:none;padding:0;margin:0}
+.main-nav a{color:var(--muted);text-decoration:none;padding:0.5rem;border-radius:8px}
+.main-nav a:hover, .main-nav a:focus{color:var(--white);background:var(--glass)}
+.actions{display:flex;align-items:center;gap:0.5rem}
+.btn{font-weight:600;border-radius:10px;padding:0.5rem 0.9rem;border:0;cursor:pointer}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001;box-shadow:0 6px 18px rgba(0,230,255,0.08)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)}
+.btn-muted{background:transparent;color:var(--accent)}
+.mobile-menu{display:none;background:transparent;border:0;color:var(--white);font-size:1.2rem}
+
+.btn[aria-pressed="true"]{box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+.hero{padding:2rem 0}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center}
+.hero h1{font-size:1.6rem;margin:0 0 0.4rem}
+.tagline{color:var(--muted);margin:0 0 1rem}
+.micro{color:var(--muted);font-size:0.9rem;margin-top:0.6rem}
+.hero-art img{width:100%;height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5))}
+.spotlight{padding:1.2rem 0}
+.section-header h2{margin:0 0 0.2rem}
+.filters{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin:1rem 0}
+select{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:0.5rem;border-radius:8px;color:var(--white)}
+.cards-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.program-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.news-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.partners-grid{display:flex;gap:1rem;flex-wrap:wrap}
+.contact-form input, .contact-form textarea{width:100%;padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white)}
+.form-row{display:flex;gap:1rem;align-items:center}
+.form-msg{color:var(--accent);font-weight:600}
+.site-footer{padding:2rem 0;background:linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.4));margin-top:2rem}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.footer-bottom{text-align:center;color:var(--muted);margin-top:1rem}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6)}
+.modal[aria-hidden="false"]{display:flex}
+.modal-content{background:#071226;padding:1.2rem;border-radius:12px;max-width:420px;width:100%;border:1px solid rgba(255,255,255,0.04)}
+.modal-close{float:right;background:transparent;border:0;color:var(--muted)}
+.oauth{display:flex;gap:0.5rem;margin-top:0.8rem}
+.btn.oauth{flex:1}
+
+/* Large screens */
+@media(min-width:760px){
+  .hero-grid{grid-template-columns:1fr 420px}
+  .main-nav ul{gap:1.2rem}
+  .mobile-menu{display:none}
+  .cards-grid{grid-template-columns:repeat(3,1fr)}
+  .program-grid{grid-template-columns:repeat(2,1fr)}
+  .news-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:2fr 1fr 1fr}
+}
+/* Small screens show menu button */
+@media(max-width:759px){
+  .main-nav{display:none}
+  .mobile-menu{display:inline-block}
+}
+
+/* Accent micro-interactions */
+.btn-primary:hover{transform:translateY(-3px);transition:transform 160ms}
+.card:hover{transform:translateY(-6px);transition:transform 180ms}
+select:focus,input:focus,textarea:focus{outline:2px solid rgba(0,229,255,0.12);outline-offset:2px}
+
+/* Utility */
+.hidden{display:none}
+
+/* Help bot styles */
+.help-bot{position:fixed;right:20px;bottom:20px;z-index:120}
+.bot-button{width:56px;height:56px;border-radius:28px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#001;font-size:22px;box-shadow:0 8px 20px rgba(0,0,0,0.25);cursor:pointer}
+.bot-panel{width:320px;max-height:520px;background:var(--surface);border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,0.45);overflow:hidden;display:flex;flex-direction:column;margin-bottom:12px}
+.bot-header{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1rem;border-bottom:1px solid rgba(255,255,255,0.03)}
+.bot-header .bot-sub{font-size:0.85rem;color:var(--muted)}
+.bot-close{background:transparent;border:0;color:var(--muted);font-size:16px;cursor:pointer}
+.bot-messages{padding:0.8rem;overflow:auto;flex:1;display:flex;flex-direction:column;gap:0.5rem}
+.bot-bubble{max-width:80%;padding:0.6rem 0.8rem;border-radius:14px;font-size:0.95rem}
+.bot-bubble.user{align-self:flex-end;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001}
+.bot-bubble.bot{align-self:flex-start;background:rgba(255,255,255,0.03);color:var(--white)}
+.bot-form{display:flex;gap:0.5rem;padding:0.6rem;border-top:1px solid rgba(255,255,255,0.02)}
+.bot-form input{flex:1;padding:0.6rem;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)}
+
+@media(max-width:520px){
+  .bot-panel{width:92vw;right:4vw;left:4vw;bottom:84px}
+  .help-bot{right:12px;bottom:12px}
+}
